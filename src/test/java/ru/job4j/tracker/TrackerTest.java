@@ -47,7 +47,7 @@ public class TrackerTest {
         tracker.add(item2);
         tracker.add(item3);
         tracker.add(item4);
-        assertThat(null, is(tracker.findByName("test4")));
+        assertThat(new Item[0], is(tracker.findByName("test4")));
     }
     @Test
     public void findAllFourItems() {
