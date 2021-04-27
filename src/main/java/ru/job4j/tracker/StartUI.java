@@ -19,7 +19,7 @@ public class StartUI {
                 System.out.println("=== Show all items ====");
                 Item[] allItems = tracker.findAll();
                 for (Item element: allItems) {
-                    System.out.println(element.getId() + " " + element.getName());
+                    System.out.println(element.toString());
                 }
             } else if (select == 2) {
                 System.out.println("=== Enter item's id ====");
