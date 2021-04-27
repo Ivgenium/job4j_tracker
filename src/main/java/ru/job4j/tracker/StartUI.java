@@ -48,7 +48,7 @@ public class StartUI {
                     System.out.println("No item with this id was found!");
                 }
                 else {
-                    System.out.println(item.getName());
+                    System.out.println(item.toString());
                 }
             } else if (select == 5) {
                 System.out.println("=== Enter item's name ====");
@@ -59,7 +59,7 @@ public class StartUI {
                 }
                 else {
                     for (Item element: item) {
-                        System.out.println(element.getId() + " " + element.getName());
+                        System.out.println(element.toString());
                     }
                 }
             } else if (select == 6) {
