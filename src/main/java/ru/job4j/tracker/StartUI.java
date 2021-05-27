@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class StartUI {
@@ -78,8 +80,13 @@ public class StartUI {
         System.out.println("6. Exit Program");
     }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Tracker tracker = new Tracker();
-        new StartUI().init(scanner, tracker);
+        Item item = new Item("test1");
+        LocalDateTime created = item.getCreated();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+        String createdFormat = created.format(formatter);
+        System.out.println(createdFormat);
+//        Scanner scanner = new Scanner(System.in);
+//        Tracker tracker = new Tracker();
+//        new StartUI().init(scanner, tracker);
     }
 }
