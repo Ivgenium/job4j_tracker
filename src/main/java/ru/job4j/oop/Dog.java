@@ -5,5 +5,8 @@ public class Dog {
         Dog polkan = new Dog();
         Dog sharik = new Dog();
         Dog zhychka = new Dog();
+        System.out.println(polkan);
+        System.out.println(sharik);
+        System.out.println(zhychka);
     }
 }
