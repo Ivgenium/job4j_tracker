@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 class MaxTest {
     @Test
@@ -10,7 +10,7 @@ class MaxTest {
         int right = 2;
         int result = Max.max(left, right);
         int expected = 2;
-        Assert.assertEquals(result, expected);
+        assertThat(expected).isEqualTo(result);
     }
 
     @Test
@@ -19,7 +19,7 @@ class MaxTest {
         int right = 1;
         int result = Max.max(left, right);
         int expected = 3;
-        Assert.assertEquals(result, expected);
+        assertThat(expected).isEqualTo(result);
     }
 
     @Test
@@ -28,7 +28,7 @@ class MaxTest {
         int right = 5;
         int result = Max.max(left, right);
         int expected = 5;
-        Assert.assertEquals(result, expected);
+        assertThat(expected).isEqualTo(result);
     }
 
     @Test
@@ -38,7 +38,7 @@ class MaxTest {
         int third = 3;
         int result = Max.max(first, second, third);
         int expected = 5;
-        Assert.assertEquals(result, expected);
+        assertThat(expected).isEqualTo(result);
     }
 
     @Test
@@ -49,6 +49,6 @@ class MaxTest {
         int fourth = 8;
         int result = Max.max(first, second, third, fourth);
         int expected = 8;
-        Assert.assertEquals(result, expected);
+        assertThat(expected).isEqualTo(result);
     }
 }

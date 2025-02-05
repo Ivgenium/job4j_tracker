@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 public class PointTest {
     @Test
@@ -10,7 +10,7 @@ public class PointTest {
         Point b = new Point(2, 0);
         double expected = 2;
         double out = a.distance(b);
-        Assert.assertEquals(expected, out, 0.01);
+        assertThat(expected).isEqualTo(out, withPrecision(0.01));
     }
 
     @Test
@@ -19,7 +19,7 @@ public class PointTest {
         Point b = new Point(5, 5);
         double expected = 0;
         double out = a.distance(b);
-        Assert.assertEquals(expected, out, 0.01);
+        assertThat(expected).isEqualTo(out, withPrecision(0.01));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class PointTest {
         Point b = new Point(1, 2);
         double expected = 1;
         double out = a.distance(b);
-        Assert.assertEquals(expected, out, 0.01);
+        assertThat(expected).isEqualTo(out, withPrecision(0.01));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class PointTest {
         Point b = new Point(-2, 2);
         double expected = 1.41;
         double out = a.distance(b);
-        Assert.assertEquals(expected, out, 0.01);
+        assertThat(expected).isEqualTo(out, withPrecision(0.01));
     }
 
     @Test
@@ -46,6 +46,6 @@ public class PointTest {
         Point b = new Point(2, 2, 2);
         double expected = 1.73;
         double out = a.distance3d(b);
-        Assert.assertEquals(expected, out, 0.01);
+        assertThat(expected).isEqualTo(out, withPrecision(0.01));
     }
 }
