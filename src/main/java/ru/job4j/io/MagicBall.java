@@ -10,16 +10,11 @@ public class MagicBall {
         input.nextLine();
         String prediction;
         int answer = new Random().nextInt(3);
-        switch (answer) {
-            case 0:
-                prediction = "Да";
-                break;
-            case 1:
-                prediction = "Нет";
-                break;
-            default:
-                prediction = "Может быть";
-        }
+        prediction = switch (answer) {
+            case 0 -> "Да";
+            case 1 -> "Нет";
+            default -> "Может быть";
+        };
         System.out.println(prediction);
     }
 }
