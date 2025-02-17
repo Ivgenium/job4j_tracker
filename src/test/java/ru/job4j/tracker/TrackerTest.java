@@ -1,7 +1,10 @@
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.collection.ItemAscByName;
+import ru.job4j.collection.ItemDescByName;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -105,5 +108,55 @@ public class TrackerTest {
         tracker.add(item);
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
+    }
+
+    @Test
+    public void whenItemsSortAscByName() {
+        Item test1 = new Item("test1");
+        Item test2 = new Item("test2");
+        Item test3 = new Item("test3");
+        Item test4 = new Item("test4");
+        Item test5 = new Item("test5");
+        List<Item> items = Arrays.asList(
+                test2,
+                test1,
+                test5,
+                test4,
+                test3
+        );
+        List<Item> expected = Arrays.asList(
+                test1,
+                test2,
+                test3,
+                test4,
+                test5
+        );
+        items.sort(new ItemAscByName());
+        assertThat(items).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenItemsSortDescByName() {
+        Item test1 = new Item("test1");
+        Item test2 = new Item("test2");
+        Item test3 = new Item("test3");
+        Item test4 = new Item("test4");
+        Item test5 = new Item("test5");
+        List<Item> items = Arrays.asList(
+                test5,
+                test2,
+                test1,
+                test4,
+                test3
+        );
+        List<Item> expected = Arrays.asList(
+                test5,
+                test4,
+                test3,
+                test2,
+                test1
+        );
+        items.sort(new ItemDescByName());
+        assertThat(items).isEqualTo(expected);
     }
 }
