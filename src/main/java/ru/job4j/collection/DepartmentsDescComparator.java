@@ -1,0 +1,17 @@
+package ru.job4j.collection;
+
+import java.util.Comparator;
+
+public class DepartmentsDescComparator implements Comparator<String> {
+    @Override
+    public int compare(String left, String right) {
+        String[] leftArray = left.split("/");
+        String[] rightArray = right.split("/");
+        int rsl = rightArray[0].compareTo(leftArray[0]);
+        if (rsl == 0) {
+            rsl = left.substring(leftArray[0].length() - 1).
+                    compareTo(right.substring(rightArray[0].length() - 1));
+        }
+        return rsl;
+    }
+}
