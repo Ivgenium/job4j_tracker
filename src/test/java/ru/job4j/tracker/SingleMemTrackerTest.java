@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SingleTrackerTest {
+class SingleMemTrackerTest {
     @Test
     public void whenSingletonThenItemsAreInTheSameTracker() {
         SingleTracker singleTracker1 = SingleTracker.getInstance();
