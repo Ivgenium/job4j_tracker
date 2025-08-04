@@ -1,0 +1,1 @@
+alter table items add column checked boolean default false;
